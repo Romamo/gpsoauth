@@ -2,7 +2,12 @@
 from __future__ import annotations
 
 from collections.abc import MutableMapping
-from importlib.metadata import version
+try:
+    from importlib.metadata import version
+except ImportError: # for Python<3.8
+    from importlib_metadata import version
+
+
 import ssl
 from typing import Any, Iterable
 
